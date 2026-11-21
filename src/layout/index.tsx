@@ -1,7 +1,6 @@
 import { lazy, Suspense, useEffect, useRef } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { AuthorContact } from "@/components/author-contact";
-import { GithubLink, repositoryUrl } from "@/components/github-link";
 import { HomePageSkeleton } from "@/components/home-page-skeleton";
 import { IpSearch } from "@/components/ip-search";
 import { LanguageSelect } from "@/components/language-select";
@@ -80,7 +79,6 @@ export function AppLayout() {
             <PrivacyToggle iconOnly />
             <LanguageSelect />
             <ThemeToggleButton className="size-8 rounded-full text-muted-foreground" />
-            <GithubLink />
           </div>
         </header>
         <nav
@@ -106,7 +104,6 @@ export function AppLayout() {
             <PrivacyToggle iconOnly />
             <LanguageSelect />
             <ThemeToggleButton className="size-9 shrink-0 rounded-lg text-muted-foreground" />
-            <GithubLink />
           </div>
         </nav>
         <main className="outline-none">
@@ -151,7 +148,7 @@ export function AppLayout() {
           ·{" "}
           <UnderlineHover asChild>
             <a
-              href={repositoryUrl}
+              href="https://github.com/suixin45/one-ip"
               target="_blank"
               rel="noopener noreferrer"
               className="align-middle"
@@ -162,12 +159,6 @@ export function AppLayout() {
           ·{" "}
           <UnderlineHover asChild>
             <AuthorContact />
-          </UnderlineHover>{" "}
-          ·{" "}
-          <UnderlineHover asChild>
-            <a href="https://ipbot.net">
-              {t("navigation.commercialProjectExample")}
-            </a>
           </UnderlineHover>
         </footer>
       </div>
