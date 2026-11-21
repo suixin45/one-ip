@@ -1,6 +1,6 @@
 import { AuthorContact } from "@/components/author-contact";
 import { PageHeading, ToolCard } from "@/components/toolkit";
-import { t } from "@/i18n";
+import { locale, t } from "@/i18n";
 
 export default function PolicyPage({ page }: { page: "terms" | "privacy" }) {
   const sections = {
@@ -84,8 +84,8 @@ export default function PolicyPage({ page }: { page: "terms" | "privacy" }) {
             {body}
             {page === "terms" && title === t("policy.tsx.thirdPartyServicesAndOpenSourceLicense") && (
               <>
-                {" "}<a className="text-primary hover:underline" href="https://github.com/suixin45/one-ip" target="_blank" rel="noopener noreferrer">对应源码</a>
-                {" · "}<a className="text-primary hover:underline" href="https://github.com/suixin45/one-ip/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">AGPL-3.0 许可证</a>
+                {" "}<a className="text-primary hover:underline" href="https://github.com/suixin45/one-ip" target="_blank" rel="noopener noreferrer">{locale === "en" ? "Corresponding source" : "对应源码"}</a>
+                {" · "}<a className="text-primary hover:underline" href="https://github.com/suixin45/one-ip/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">{locale === "en" ? "AGPL-3.0 license" : "AGPL-3.0 许可证"}</a>
               </>
             )}
           </p>
