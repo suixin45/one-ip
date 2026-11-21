@@ -1,6 +1,5 @@
 import { lazy, Suspense, useEffect, useRef } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { AuthorContact } from "@/components/author-contact";
 import { HomePageSkeleton } from "@/components/home-page-skeleton";
 import { IpSearch } from "@/components/ip-search";
 import { LanguageSelect } from "@/components/language-select";
@@ -148,17 +147,13 @@ export function AppLayout() {
           ·{" "}
           <UnderlineHover asChild>
             <a
-              href="https://github.com/suixin45/one-ip"
+              href="https://github.com/zhihui-hu/one-ip"
               target="_blank"
               rel="noopener noreferrer"
               className="align-middle"
             >
               GitHub
             </a>
-          </UnderlineHover>{" "}
-          ·{" "}
-          <UnderlineHover asChild>
-            <AuthorContact />
           </UnderlineHover>
         </footer>
       </div>
