@@ -80,18 +80,17 @@ export default function PolicyPage({ page }: { page: "terms" | "privacy" }) {
       />
       {sections[page].map(([title, body]) => (
         <ToolCard key={title} title={title}>
-          <p className="text-sm leading-6 text-muted-foreground">{body}</p>
-        </ToolCard>
-      ))}
-      {page === "terms" && (
-        <ToolCard title="开源许可 / Open-source license">
           <p className="text-sm leading-6 text-muted-foreground">
-            One IP · AGPL-3.0-only · 本站修改版 / Modified version (2026-11-21).
-            {" "}<a className="text-primary hover:underline" href="https://github.com/suixin45/one-ip" target="_blank" rel="noopener noreferrer">对应源码 / Corresponding source</a>
-            {" · "}<a className="text-primary hover:underline" href="https://github.com/suixin45/one-ip/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">许可证 / License</a>
+            {body}
+            {page === "terms" && title === t("policy.tsx.thirdPartyServicesAndOpenSourceLicense") && (
+              <>
+                {" "}<a className="text-primary hover:underline" href="https://github.com/suixin45/one-ip" target="_blank" rel="noopener noreferrer">对应源码</a>
+                {" · "}<a className="text-primary hover:underline" href="https://github.com/suixin45/one-ip/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">AGPL-3.0 许可证</a>
+              </>
+            )}
           </p>
         </ToolCard>
-      )}
+      ))}
       <ToolCard title={t("policy.contactAuthor")}>
         <p className="mb-2 text-sm text-muted-foreground">
           {t("policy.tsx.questionsAboutSiteUsagePrivacyContactAuthorEmail")}
